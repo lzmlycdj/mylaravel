@@ -16,11 +16,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('hello',
+Route::get('hello123',
 
-function(){
-    echo 'xxxxxx';
-}
+ 'TestController@doAwesome'
 
 
 );
