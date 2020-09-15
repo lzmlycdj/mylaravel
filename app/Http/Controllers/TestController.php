@@ -10,8 +10,7 @@ class TestController extends Controller
      public function doAwesome(AwesomeServiceInterface $awesome_service)
      {
          $awesome_service->doAwesomeThing();
-         echo 'sfsfsdf';
-         exit;
+      
          return new Response();
      }
 }
