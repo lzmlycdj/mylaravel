@@ -12,6 +12,6 @@ class Rice
 {
     public function food()
     {
-        return '香喷喷的白米饭';
+        return '香喷喷的白米饭2';
     }
 }
