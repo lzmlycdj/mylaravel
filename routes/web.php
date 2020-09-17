@@ -18,15 +18,15 @@ Route::get('/', function () {
 
 Route::get('hello123',
 
- 'TestController@doAwesome'
+    'TestController@doAwesome'
 
 
 );
 
-Route::match(['get','post'],'hello',
-function(){
-    return 'hello laravle mathc';
-}
+Route::match(['get', 'post'], 'hello',
+    function () {
+        return 'hello laravle mathc';
+    }
 );
 
 /* Route::any(
@@ -39,15 +39,29 @@ function(){
 
 
 Route::any(
-    
+
     'hello/{id}',
     function ($id) {
-       echo $id;
+        echo $id;
     }
 );
 
 
+/*class Rice {
+    public  function  food(){
+        return "香喷喷的米饭";
+    }
+}
 
 
+app()->bind('rice', function (){
+    return new Rice();
+});
 
 
+Route::get('eat', function() {
+
+    return app()->make('rice')->food();
+    // 或者 return resolve('rice')->food()；
+
+});*/

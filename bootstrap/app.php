@@ -10,6 +10,10 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
+/* 这是 Laravel 框架内为数不多的直接 new 出来的对象，也就是框架的应用对象，
+此对象继承于 Illuminate\Container\Container （容器），
+所以， Laravel 框架中的容器对象一般就是指的 Illuminate\Foundation\Application 对象（因在实际运行过程中，
+不会直接 new Illuminate\Container\Container 的）。 */
 
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
@@ -25,6 +29,10 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+// 这里的singleton是 public/index.php 中，用 Illuminate\Contracts\Http\Kernel 能注入后取出 App\Http\Kernel 的关键。
+// https://www.cnblogs.com/fengzmh/p/10289381.html
+// singleton和bind都是返回一个类的实例，不同的是singleton是单例模式，而bind是每次返回一个新的实例。
+
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,

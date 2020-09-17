@@ -20,7 +20,7 @@ define('LARAVEL_START', microtime(true));
 | loading any of our classes later on. It feels great to relax.
 |
 */
-
+// 逻辑为，引入 ../vendor/autoload.php，即 composer 产生的 vendor/autoload.php。
 require __DIR__.'/../vendor/autoload.php';
 
 /*
@@ -34,7 +34,7 @@ require __DIR__.'/../vendor/autoload.php';
 | the responses back to the browser and delight our users.
 |
 */
-
+// 这里面做的事情不少，具体的我们看 bootstrap/app.php 的代码。
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
