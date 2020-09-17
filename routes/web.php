@@ -45,6 +45,11 @@ Route::any(
         echo $id;
     }
 );
+Route::get('eat', function() {
+    return app()->make('rice')->food();
+    // 或者 return resolve('rice')->food()；
+
+});
 
 
 /*class Rice {
